@@ -1,9 +1,10 @@
+---
 name: Atribuir usuário como Assignee
-
 on:
   issues:
-    types: [opened]
-
+    types:
+      - opened
+      - edited
 jobs:
   assign-user:
     runs-on: ubuntu-latest
