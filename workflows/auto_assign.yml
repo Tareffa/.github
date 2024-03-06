@@ -1,0 +1,19 @@
+---
+name: Atribuir usuário como Assignee
+on:
+  issues:
+    types:
+      - opened
+      - edited
+jobs:
+  assign-user:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Atribuir issue ao criador
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/{owner}/{repo}/issues/{issue_number}/assignees
+          issue_number: ${{ github.event.issue.number }}
+          assignees: '["${{ github.actor }}"]'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
