@@ -12,4 +12,4 @@
 
 ### Como foi testado?
 
-> Descreva o passo-a-passo para reproduzir os testes realizados e o resultado obtido
+> Descreva o passo-a-passo para reproduzir os testes realizados.
